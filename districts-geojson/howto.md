@@ -28,7 +28,4 @@
      L.geoJson(data).addTo(map);
    });
 
-   // Adding marker to the map
-   marker.addTo(map);
-
 </script>
