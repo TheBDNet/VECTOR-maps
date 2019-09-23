@@ -1,2 +1,3 @@
-# geoJSON
-The GeoJSON files used in http://www.thebangladesh.net
+# CSV-geoJSON-KML
+The Vector map files used in http://www.thebangladesh.net
+
