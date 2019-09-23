@@ -4,25 +4,31 @@
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script><br/>
 
 # Code in article
-<div id = "map" style = "width:100%; height:300px"></div><br/>
-<script><br/>
-   // Creating map options<br/>
-   var mapOptions = {<br/>
- center: [23.80, 90.25],<br/>
- zoom: 10<br/>
+<div id = "map" style = "width:100%; height:300px"></div>
+<script>
+   // Creating map options
+   var mapOptions = {
+   center: [23.80, 90.25],
+   zoom: 10
 
-   // Creating a map object<br/>
-   var map = new L.map('map', mapOptions);<br/>
+    //Scroll wheel zoom only after click
+    map.scrollWheelZoom.disable();
+    map.on('focus', () => { map.scrollWheelZoom.enable(); });
+    map.on('blur', () => { map.scrollWheelZoom.disable(); });
 
-   // Adding tile layer to map<br/>
-   var layer = new L.TileLayer('https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=<apikey>').addTo(map);<br/>
+   // Creating a map object
+   var map = new L.map('map', mapOptions);
 
-   // load GeoJSON from an external file<br/>
-   $.getJSON("phocamapskml/faridpur.geojson",function(data){<br/>
-     // add GeoJSON layer to the map once the file is loaded<br/>
-     L.geoJson(data).addTo(map);<br/>
-   });<br/>
+   // Adding tile layer to map
+   var layer = new L.TileLayer('https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=7b0675ae928f48a68ad159eb21934271').addTo(map);
 
-   // Adding marker to the map<br/>
-   marker.addTo(map);<br/>
-</script><br/>
+   // load GeoJSON from an external file
+   $.getJSON("phocamapskml/faridpur.geojson",function(data){
+     // add GeoJSON layer to the map once the file is loaded
+     L.geoJson(data).addTo(map);
+   });
+
+   // Adding marker to the map
+   marker.addTo(map);
+
+</script>
