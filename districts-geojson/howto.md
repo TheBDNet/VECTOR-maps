@@ -12,15 +12,15 @@
    zoom: 10
 
     //Scroll wheel zoom only after click
-    map.scrollWheelZoom.disable();
-    map.on('focus', () => { map.scrollWheelZoom.enable(); });
-    map.on('blur', () => { map.scrollWheelZoom.disable(); });
+    //map.scrollWheelZoom.disable();
+    //map.on('focus', () => { map.scrollWheelZoom.enable(); });
+    //map.on('blur', () => { map.scrollWheelZoom.disable(); });
 
    // Creating a map object
    var map = new L.map('map', mapOptions);
 
    // Adding tile layer to map
-   var layer = new L.TileLayer('https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=7b0675ae928f48a68ad159eb21934271').addTo(map);
+   var layer = new L.TileLayer('https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=<apikey>').addTo(map);
 
    // load GeoJSON from an external file
    $.getJSON("phocamapskml/faridpur.geojson",function(data){
